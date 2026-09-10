@@ -13,7 +13,3 @@ services:
       # The workbook is committed to data/, so no external storage is needed.
       - key: HELIOS_XLSX
         value: ./data/Helios_Business_Travel_Expenses_2025.xlsx
-      # Generated once by Render; clients must send it as `Authorization: Bearer <value>`.
-      # Read it from the dashboard (Environment tab) after the first deploy.
-      - key: MCP_AUTH_TOKEN
-        generateValue: true
