@@ -1,0 +1,21 @@
+[project]
+name = "helios-expenses-mcp"
+version = "0.1.0"
+description = "MCP server over the Helios Instruments business travel expense workbook"
+requires-python = ">=3.11"
+dependencies = [
+    # 2.x renamed FastMCP to MCPServer; this server uses the 2.x API.
+    "mcp[cli]>=2.0,<3",
+    "openpyxl>=3.1",
+    "uvicorn>=0.30",  # HTTP transport for hosted deployments (app.py)
+]
+
+[project.scripts]
+helios-expenses-mcp = "helios_expenses.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/helios_expenses"]
